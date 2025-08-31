@@ -18,10 +18,10 @@ This is a personal learning repository containing daily coding challenge solutio
 
 ### File Organization
 
-- Follow the strict naming convention: `YYYY-MM-DD--challenge-name.js`
-- Place solutions in `src/YYYY/MM/` directories
-- Create corresponding test files in `tests/YYYY/MM/`
-- Each file should be self-contained with its own solution
+- Follow the strict naming convention: `YYYY-MM-DD--challenge-name.js`.
+- Place solution files in `src/YYYY/MM/` directories.
+- **Co-locate test files**: Create corresponding `*.test.js` files in the same directory as the source file.
+- Each solution file should be self-contained.
 
 ### Code Structure Template
 
@@ -31,10 +31,10 @@ This is a personal learning repository containing daily coding challenge solutio
  * Date: YYYY-MM-DD
  * Source: [freeCodeCamp URL if available]
  * Difficulty: [Easy/Medium/Hard]
- * 
+ *
  * Description:
  * [Brief description of the problem]
- * 
+ *
  * @param {type} param - Parameter description
  * @return {type} Return value description
  */
@@ -47,7 +47,7 @@ function solutionFunction(param) {
 // Test cases or examples
 console.log(solutionFunction(testInput)); // Expected output
 
-// Export for testing (if needed)
+// Export for testing
 export { solutionFunction };
 ```
 
@@ -55,25 +55,25 @@ export { solutionFunction };
 
 ### Problem Analysis
 
-1. Clearly explain the problem requirements
-2. Identify input/output specifications
-3. Consider edge cases and constraints
-4. Discuss time/space complexity when relevant
+1. Clearly explain the problem requirements.
+2. Identify input/output specifications.
+3. Consider edge cases and constraints.
+4. Discuss time/space complexity when relevant.
 
 ### Solution Approach
 
-1. Start with a brute force approach if needed
-2. Optimize step by step
-3. Explain the reasoning behind each optimization
-4. Provide multiple solutions when beneficial
+1. Start with a brute force approach if needed.
+2. Optimize step by step.
+3. Explain the reasoning behind each optimization.
+4. Provide multiple solutions when beneficial.
 
 ### Code Quality
 
-- Write clean, commented code
-- Use descriptive variable names
-- Include error handling where appropriate
-- Follow the project's ESLint rules
-- Ensure code passes formatting checks
+- Write clean, commented code.
+- Use descriptive variable names.
+- Include error handling where appropriate.
+- Follow the project's ESLint rules.
+- Ensure code passes formatting checks.
 
 ## Testing Considerations
 
@@ -88,14 +88,14 @@ export { solutionFunction };
 ### Test File Structure
 
 ```javascript
-// tests/YYYY/MM/YYYY-MM-DD--challenge-name.test.js
-import { solutionFunction } from '../../../src/YYYY/MM/YYYY-MM-DD--challenge-name.js';
+// src/YYYY/MM/YYYY-MM-DD--challenge-name.test.js
+import { solutionFunction } from './YYYY-MM-DD--challenge-name.js';
 
 describe('Challenge Name', () => {
   test('should handle basic case', () => {
     expect(solutionFunction(input)).toBe(expectedOutput);
   });
-  
+
   test('should handle edge case', () => {
     expect(solutionFunction(edgeCase)).toBe(expectedResult);
   });
@@ -123,37 +123,37 @@ describe('Challenge Name', () => {
 
 ### Performance Considerations
 
-- Always consider Big O notation
-- Optimize for readability first, performance second
-- Comment on trade-offs between time and space complexity
-- Provide benchmarking suggestions for performance-critical solutions
+- Always consider Big O notation.
+- Optimize for readability first, performance second.
+- Comment on trade-offs between time and space complexity.
+- Provide benchmarking suggestions for performance-critical solutions.
 
 ## File Generation Guidelines
 
 When creating new challenge files:
 
-1. **Check the date format**: Ensure YYYY-MM-DD matches the actual date
-2. **Create directory structure**: Make sure `src/YYYY/MM/` exists
-3. **Follow naming convention**: Use kebab-case for challenge names
-4. **Include proper headers**: Add JSDoc with challenge details
-5. **Create test file**: Always provide corresponding test file
-6. **Test the solution**: Verify code works before committing
+1. **Check the date format**: Ensure YYYY-MM-DD matches the actual date.
+2. **Create directory structure**: Make sure `src/YYYY/MM/` exists.
+3. **Follow naming convention**: Use kebab-case for challenge names.
+4. **Include proper headers**: Add JSDoc with challenge details.
+5. **Create test file**: Always provide a corresponding `*.test.js` file in the same directory.
+6. **Test the solution**: Verify code works before committing.
 
 ## Anti-Patterns to Avoid
 
-- Don't use deprecated JavaScript features
-- Avoid overly complex one-liners that sacrifice readability
-- Don't skip error handling in production-ready code
-- Avoid hardcoded values without explanation
-- Don't ignore the project's linting rules
+- Don't use deprecated JavaScript features.
+- Avoid overly complex one-liners that sacrifice readability.
+- Don't skip error handling in production-ready code.
+- Avoid hardcoded values without explanation.
+- Don't ignore the project's linting rules.
 
 ## Communication Style
 
 When explaining solutions:
 
-- Start with problem understanding
-- Break down complex algorithms step by step
-- Use examples to illustrate concepts
-- Explain why certain approaches are chosen
-- Mention alternative solutions when relevant
-- Keep explanations clear and educational
+- Start with problem understanding.
+- Break down complex algorithms step by step.
+- Use examples to illustrate concepts.
+- Explain why certain approaches are chosen.
+- Mention alternative solutions when relevant.
+- Keep explanations clear and educational.

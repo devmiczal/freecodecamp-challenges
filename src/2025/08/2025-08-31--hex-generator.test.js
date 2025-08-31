@@ -3,7 +3,7 @@
  * ? Date: 2025-08-31
  */
 
-import { generateHex } from '../../../src/2025/08/2025-08-31--hex-generator.js';
+import { generateHex } from './2025-08-31--hex-generator.js';
 
 describe('Hex Generator Challenge', () => {
   // Helper function to convert hex to decimal

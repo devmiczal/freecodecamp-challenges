@@ -54,34 +54,34 @@ The challenges are organized by year, month, and day under the `src` directory f
 
 ```sh
 freecodecamp-challenges/
-├── src/
-│   ├── 2025/
-│   │   ├── 08/
-│   │   │   ├── 2025-08-01--two-sum.js
-│   │   │   ├── 2025-08-02--reverse-string.js
-│   │   │   └── ...
-│   │   ├── 09/
-│   │   │   ├── 2025-09-01--palindrome-check.js
-│   │   │   └── ...
-│   │   └── ...
-│   ├── 2026/
-│   └── ...
-├── tests/
-│   ├── 2025/
-│   │   ├── 08/
-│   │   │   ├── 2025-08-01--two-sum.test.js
-│   │   │   └── ...
-│   └── ...
-├── .eslintrc.js
-├── .gitignore
-├── .husky/
+├── .lintstagedrc.json
+├── .nvmrc
+├── .prettierignore
+├── .prettierrc.json
+├── eslint.config.mjs
+├── LICENSE
 ├── package.json
+├── package-lock.json
 ├── README.md
-└── ...
+├── .ai/
+│   └── llm_instructions.md
+├── .git/
+├── .husky/
+│   ├── pre-commit
+│   └── _/
+├── docs/
+│   └── history-commands.md
+└── src/
+    └── 2025/
+        └── 08/
+            ├── 2025-08-31--hex-generator.js
+            └── 2025-08-31--hex-generator.test.js
 ```
 
 **File Naming Convention:**
-`src/YYYY/MM/YYYY-MM-DD--challenge-name.js`
+
+- **Source File**: `src/YYYY/MM/YYYY-MM-DD--challenge-name.js`
+- **Test File**: `src/YYYY/MM/YYYY-MM-DD--challenge-name.test.js`
 
 Where:
 
@@ -91,7 +91,8 @@ Where:
 - `challenge-name`: A descriptive, kebab-case name for the challenge
 
 **Example:**
-`2025/08/2025-08-31--reverse-a-string.js`
+`src/2025/08/2025-08-31--reverse-a-string.js`
+`src/2025/08/2025-08-31--reverse-a-string.test.js`
 
 ## Tech Stack & Tooling
 
@@ -102,6 +103,7 @@ This project uses modern JavaScript (ES6+) and is configured with the following 
 - **[Prettier](https://prettier.io/)**: Opinionated code formatter for consistent style
 - **[Husky](https://typicode.github.io/husky/)**: Git hooks management
 - **[lint-staged](https://github.com/okonet/lint-staged)**: Pre-commit linting for staged files
+- **[Jest](https://jestjs.io/)**: Testing framework
 
 ### Requirements
 
@@ -171,11 +173,11 @@ npx husky && npm install
 
 ## Development Workflow
 
-1. **Create new challenge file**: Follow naming convention
-2. **Implement solution**: Use modern JavaScript with proper documentation
-3. **Write tests**: Create corresponding test file
-4. **Run quality checks**: ESLint and Prettier automatically run on commit
-5. **Commit changes**: Husky ensures code quality before commit
+1. **Create new challenge file**: Follow naming convention (e.g., `YYYY-MM-DD--challenge.js`).
+2. **Implement solution**: Use modern JavaScript with proper documentation.
+3. **Write tests**: Create a corresponding `*.test.js` file in the same directory.
+4. **Run quality checks**: ESLint and Prettier automatically run on commit.
+5. **Commit changes**: Husky ensures code quality before commit.
 
 ## Running Challenges
 
@@ -191,24 +193,27 @@ node --inspect src/2025/08/2025-08-01--two-sum.js
 
 ## Testing
 
-Create test files following the same directory structure:
+Test files are located next to the source files they are testing.
 
 ```bash
-# Run specific test
-npm test tests/2025/08/2025-08-01--two-sum.test.js
+# Run a specific test file
+npm test src/2025/08/2025-08-01--two-sum.test.js
 
-# Run all tests (when test runner is configured)
+# Run all tests
 npm test
+
+# Run tests in watch mode
+npm run test:watch
 ```
 
 **Test File Template:**
 
 ```js
-// tests/YYYY/MM/YYYY-MM-DD--challenge-name.test.js
-import { solutionFunction } from '../../../src/YYYY/MM/YYYY-MM-DD--challenge-name.js';
+// src/YYYY/MM/YYYY-MM-DD--challenge-name.test.js
+import { solutionFunction } from './YYYY-MM-DD--challenge-name.js';
 
 describe('Challenge Name', () => {
-  test('should solve basic case', () => {
+  test('should solve a basic case', () => {
     expect(solutionFunction(input)).toBe(expectedOutput);
   });
 });
