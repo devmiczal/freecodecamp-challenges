@@ -10,14 +10,43 @@ The goal of this project is to consistently practice problem-solving, improve my
 
 - [freeCodeCamp - Daily Coding Challenges](#freecodecamp---daily-coding-challenges)
   - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
   - [File Structure](#file-structure)
   - [Tech Stack \& Tooling](#tech-stack--tooling)
+    - [Requirements](#requirements)
     - [ESLint Configuration](#eslint-configuration)
+    - [Prettier Configuration](#prettier-configuration)
     - [Husky Configuration](#husky-configuration)
+      - [Husky - problems](#husky---problems)
+  - [Development Workflow](#development-workflow)
   - [Running Challenges](#running-challenges)
+  - [Testing](#testing)
+  - [Code Quality](#code-quality)
+  - [Project Guidelines](#project-guidelines)
+    - [Code Style](#code-style)
+    - [Solution Structure](#solution-structure)
+    - [Algorithm Categories Covered](#algorithm-categories-covered)
+  - [AI Assistant Instructions](#ai-assistant-instructions)
   - [Contributing](#contributing)
   - [Disclaimer](#disclaimer)
   - [License](#license)
+
+## Project Overview
+
+This repository serves as:
+
+- **Learning Platform**: Daily practice with algorithmic problems
+- **Progress Tracker**: Organized solutions showing skill development over time
+- **Code Quality Showcase**: Modern JavaScript with professional tooling setup
+- **Reference Material**: Documented solutions for future review
+
+**Key Features:**
+
+- Modern ES6+ JavaScript implementation
+- Comprehensive testing setup
+- Automated code quality checks
+- Organized file structure for scalability
+- Professional development workflow
 
 ## File Structure
 
@@ -52,7 +81,6 @@ freecodecamp-challenges/
 ```
 
 **File Naming Convention:**
-
 `src/YYYY/MM/YYYY-MM-DD--challenge-name.js`
 
 Where:
@@ -69,48 +97,233 @@ Where:
 
 This project uses modern JavaScript (ES6+) and is configured with the following tools to ensure code quality and consistency:
 
-- **[ESLint](https://eslint.org/)**: A pluggable linter tool for identifying and reporting on patterns in JavaScript.
-- **[Prettier](https://prettier.io/)**: An opinionated code formatter that enforces a consistent style.
-- **[Husky](https://typicode.github.io/husky/)**: A tool that makes it easy to work with Git hooks.
-- **[lint-staged](https://github.com/okonet/lint-staged)**: Runs linters on staged Git files, preventing bad code from being committed.
+- **[Node.js](https://nodejs.org/)**: JavaScript runtime (v22+)
+- **[ESLint](https://eslint.org/)**: Pluggable linter for identifying and reporting patterns
+- **[Prettier](https://prettier.io/)**: Opinionated code formatter for consistent style
+- **[Husky](https://typicode.github.io/husky/)**: Git hooks management
+- **[lint-staged](https://github.com/okonet/lint-staged)**: Pre-commit linting for staged files
+
+### Requirements
+
+- **Node.js**
+  - Version 22 or later
+  - My setup is 24
+- **npm**: Version 11 or later
+- **Git**: For version control and hooks
 
 ### ESLint Configuration
 
-The `.eslintrc.js` file is configured for modern JavaScript and TypeScript, with rules to ensure clean, readable code.
+Modern flat config setup (`eslint.config.mjs`) with:
+
+- ES6+ syntax support
+- Node.js and browser globals
+- Prettier integration
+- Custom rules for code quality
+
+```bash
+# Run ESLint
+npx eslint .
+
+# Fix auto-fixable issues
+npx eslint . --fix
+```
+
+### Prettier Configuration
+
+Consistent code formatting with `.prettierrc.json`:
+
+- 2-space indentation
+- Single quotes
+- Semicolons
+- 110 character line width
+- Others
+
+```bash
+# Format code
+npx prettier --write .
+
+# Check formatting
+npx prettier --check .
+```
 
 ### Husky Configuration
 
-Husky is set up to run `npm run lint` and `npm run test` before each commit, preventing issues from entering the repository.
+Pre-commit hooks ensure code quality:
+
+- Runs ESLint on staged files
+- Applies Prettier formatting
+- Prevents bad code from entering repository
+
+#### Husky - problems
+
+<https://typicode.github.io/husky/getting-started.html>
+
+```bash
+# Fix executable permissions
+chmod ug+x .husky/* && chmod ug+x .git/hooks/*
+
+# Initialize Husky
+npx husky init && npm install
+
+# Alternative if issues persist
+npx husky && npm install
+```
+
+## Development Workflow
+
+1. **Create new challenge file**: Follow naming convention
+2. **Implement solution**: Use modern JavaScript with proper documentation
+3. **Write tests**: Create corresponding test file
+4. **Run quality checks**: ESLint and Prettier automatically run on commit
+5. **Commit changes**: Husky ensures code quality before commit
 
 ## Running Challenges
 
-Each challenge is a standalone JavaScript file in `src/year/month/`. To run a specific challenge, use Node.js:
+Each challenge is a standalone JavaScript file. Run with Node.js:
 
 ```bash
-node src/2025/08/2025-08-01-two-sum.js
+# Run specific challenge
+node src/2025/08/2025-08-01--two-sum.js
+
+# Run with debugging
+node --inspect src/2025/08/2025-08-01--two-sum.js
 ```
 
-To run tests for a specific challenge:
+## Testing
+
+Create test files following the same directory structure:
 
 ```bash
-npm test tests/2025/08/2025-08-01-two-sum.test.js
+# Run specific test
+npm test tests/2025/08/2025-08-01--two-sum.test.js
+
+# Run all tests (when test runner is configured)
+npm test
 ```
+
+**Test File Template:**
+
+```js
+// tests/YYYY/MM/YYYY-MM-DD--challenge-name.test.js
+import { solutionFunction } from '../../../src/YYYY/MM/YYYY-MM-DD--challenge-name.js';
+
+describe('Challenge Name', () => {
+  test('should solve basic case', () => {
+    expect(solutionFunction(input)).toBe(expectedOutput);
+  });
+});
+```
+
+## Code Quality
+
+**Automated Checks:**
+
+- **Pre-commit**: lint-staged runs ESLint + Prettier
+- **CI/CD Ready**: Configuration supports GitHub Actions
+- **Type Safety**: JSDoc comments for better documentation
+
+**Manual Commands:**
+
+```bash
+# Lint code
+npm run lint
+
+# Fix linting issues
+npm run lint:fix
+
+# Format code
+npm run format
+
+# Check formatting
+npm run format:check
+```
+
+## Project Guidelines
+
+### Code Style
+
+- Use modern ES6+ features (arrow functions, destructuring, template literals)
+- Prefer `const` and `let` over `var`
+- Write self-documenting code with meaningful variable names
+- Include JSDoc for complex functions
+- Handle edge cases and errors appropriately
+
+### Solution Structure
+
+```js
+/**
+ * Challenge: [Title]
+ * Date: YYYY-MM-DD
+ * Difficulty: [Easy/Medium/Hard]
+ * Time Complexity: O(?)
+ * Space Complexity: O(?)
+ */
+
+const solutionFunction = (input) => {
+  // Implementation with comments
+};
+
+// Test examples
+console.log(solutionFunction(testCase)); // Expected: result
+
+export { solutionFunction };
+```
+
+### Algorithm Categories Covered
+
+- Array manipulation and searching
+- String processing and pattern matching
+- Mathematical computations
+- Data structure implementations
+- Recursion and dynamic programming
+- Sorting and searching algorithms
+- Tree and graph traversal
+
+## AI Assistant Instructions
+
+For AI assistants helping with this project, see [llm_instructions.md](.ai/llm_instructions.md) for:
+
+- Code standards and preferences
+- Solution approach guidelines
+- Testing requirements
+- File structure conventions
+- Communication style preferences
 
 ## Contributing
 
-This is a personal project, but I welcome feedback and suggestions! If you'd like to contribute, please:
+This is a personal learning project, but feedback and suggestions are welcome:
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Commit your changes with clear messages.
-4. Push to your branch and open a pull request.
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/improvement`)
+3. **Follow** the established code style and naming conventions
+4. **Test** your changes thoroughly
+5. **Commit** with clear, descriptive messages
+6. **Submit** a pull request
 
-Please ensure your code adheres to the ESLint rules and passes all tests.
+**Contribution Guidelines:**
+
+- Ensure code passes all ESLint rules
+- Include tests for new functionality
+- Follow the established file naming convention
+- Add JSDoc documentation for complex functions
 
 ## Disclaimer
 
-These are my personal solutions developed for learning purposes. They may not always represent the most optimal solution, but they reflect my understanding at the time of completion.
+These are personal solutions developed for learning purposes. They may not always represent the most optimal approach, but reflect my understanding and problem-solving approach at the time of implementation.
+
+The solutions prioritize:
+
+1. **Correctness**: Solving the problem as specified
+2. **Readability**: Clear, maintainable code
+3. **Learning**: Demonstrating understanding of concepts
+4. **Performance**: Optimized where beneficial
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+**Happy Coding! 🚀**  
+
+*"The only way to learn a new programming language is by writing programs in it."* - Dennis Ritchie
