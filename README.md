@@ -11,7 +11,7 @@ The goal of this project is to consistently practice problem-solving, improve my
 - [freeCodeCamp - Daily Coding Challenges](#freecodecamp---daily-coding-challenges)
   - [Table of Contents](#table-of-contents)
   - [Project Overview](#project-overview)
-  - [File Structure](#file-structure)
+  - [File Structure 📁](#file-structure-)
   - [Tech Stack \& Tooling](#tech-stack--tooling)
     - [Requirements](#requirements)
     - [ESLint Configuration](#eslint-configuration)
@@ -48,7 +48,7 @@ This repository serves as:
 - Organized file structure for scalability
 - Professional development workflow
 
-## File Structure
+## File Structure 📁
 
 The challenges are organized by year, month, and day under the `src` directory for clarity and scalability:
 
@@ -65,10 +65,13 @@ freecodecamp-challenges/
 ├── README.md
 ├── .ai/
 │   └── llm_instructions.md
-├── .git/
+├── .github/
+│   └── copilot-instructions.md
 ├── .husky/
 │   ├── pre-commit
 │   └── _/
+├── .vscode/
+│   └── settings.json
 ├── docs/
 │   └── history-commands.md
 └── src/

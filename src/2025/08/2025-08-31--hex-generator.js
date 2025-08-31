@@ -1,12 +1,12 @@
 /**
- * ? Challenge: Hex Color Generator
- * ? Date: 2025-08-31
- * ? Source: https://www.freecodecamp.org/learn/daily-coding-challenge/2025-08-31
- * ? Difficulty: Medium
+ * Challenge: Hex Color Generator
+ * Date: 2025-08-31
+ * Source: https://www.freecodecamp.org/learn/daily-coding-challenge/2025-08-31
+ * Difficulty: Medium
  *
- * ? Description:
- * ? Generate a random hex color code with the specified dominant color.
- * ? The dominant color should have a higher value than the other two colors.
+ * Description:
+ * Generate a random hex color code with the specified dominant color.
+ * The dominant color should have a higher value than the other two colors.
  *
  * @param {string} colorName - The dominant color name ('red', 'green', or 'blue')
  * @return {string} Six-character hex color code or "Invalid color"
