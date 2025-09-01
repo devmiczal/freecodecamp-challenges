@@ -119,6 +119,12 @@ git checkout main
 git fetch upstream
 git merge upstream/main
 
+# Note: If you see an error "fatal: refusing to merge unrelated histories" on your first update,
+# this is expected because you started from a template. Run this command instead:
+git merge upstream/main --allow-unrelated-histories
+
+# You only need to do this once. All future merges will work with the standard command.
+
 # 4. Update your solutions branch with the new template changes
 git checkout solutions/your-username
 git rebase main # This is the recommended way to apply your changes on top of the latest template
