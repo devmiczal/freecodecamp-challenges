@@ -4,7 +4,7 @@ The coding challenge of the day from freeCodeCamp.
 
 This repository contains my personal solutions to the Daily Coding Challenges from the [freeCodeCamp "Daily Coding Challenge Archive"](https://www.freecodecamp.org/learn/daily-coding-challenge/archive).
 
-The goal of this project is to consistently practice problem-solving, improve my JavaScript skills, and keep a log of my progress.
+The goal of this project is to consistently practice problem-solving, improve my JavaScript skills, project setup, and testing LLMs (commands, docJS, test jest, etc.).
 
 ## Table of Contents
 
@@ -63,7 +63,11 @@ If you want to create your own copy of this repository to add your solutions to 
 Download a copy of the repository to your computer:
 
 ```bash
-git clone https://github.com/freeCodeCamp/freeCodeCamp.git freecodecamp-challenges
+# You can change the name of the repository folder (`freecodecamp-challenges`).
+git clone git@github.com:devmiczal/freecodecamp-challenges.git freecodecamp-challenges
+# Or
+git clone https://github.com/devmiczal/freecodecamp-challenges.git freecodecamp-challenges
+
 cd freecodecamp-challenges
 ```
 
@@ -93,6 +97,7 @@ git commit -m "Initial commit: Fork of freeCodeCamp Daily Coding Challenges"
 
 ```bash
 git remote add origin https://github.com/your-username/my-freecodecamp-challenges.git
+# main or master
 git branch -M main
 git push -u origin main
 ```
