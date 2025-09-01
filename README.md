@@ -104,6 +104,8 @@ git remote add upstream https://github.com/devmiczal/freecodecamp-challenges.git
 
 **Step 2: Fetch and Merge Updates**  
 
+> **Note:** After updating the project (after performing merge/rebase), run `npm install` to install or update dependencies if there are new or changed configuration files (e.g., `package.json`, `package-lock.json`).
+
 When you want to update your repository with the latest changes from the template:
 
 ```bash
