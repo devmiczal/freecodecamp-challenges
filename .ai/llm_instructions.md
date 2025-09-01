@@ -157,3 +157,23 @@ When explaining solutions:
 - Explain why certain approaches are chosen.
 - Mention alternative solutions when relevant.
 - Keep explanations clear and educational.
+
+## Markdown Formatting Guidelines
+
+These instructions apply to formatting `.md` files.
+
+### Generating a Table of Contents (ToC)
+
+When you generate a table of contents, it must be in the form of a nested list that reflects the header structure of the document. Use Markdown-compliant links. Example format:
+
+```md
+# Title 1 - document title
+
+## Table of Contents
+
+- [Title 1 - document title](#title-1---document-title)
+  - [Table of Contents](#table-of-contents)
+  - [Title 2 - first section title](#title-2---first-section-title)
+
+## Title 2 - first section title
+```

@@ -12,6 +12,7 @@ The goal of this project is to consistently practice problem-solving, improve my
   - [Table of Contents](#table-of-contents)
   - [Project Overview](#project-overview)
   - [Setting Up Your Own Repository](#setting-up-your-own-repository)
+    - [Branching Strategy](#branching-strategy)
     - [Keeping Your Repository Up-to-Date](#keeping-your-repository-up-to-date)
   - [File Structure 📁](#file-structure-)
   - [Tech Stack \& Tooling](#tech-stack--tooling)
@@ -71,6 +72,24 @@ cd your-new-repository-name
 
 Now you can start adding your own solutions!
 
+### Branching Strategy
+
+To keep your personal solutions separate from the template's core files and make updates easier, please follow this branching model:
+
+- **`main`**: This branch should mirror the original template. Keep it clean and use it only to pull in updates from the upstream (original) repository. **Do not commit your solutions directly to `main`**.
+
+- **`solutions/your-username`**: Create a personal branch starting from `main` to store your solutions (e.g., `solutions/devmiczal`). This isolates your work and prevents conflicts when updating the template.
+
+**Creating your solutions branch:**
+
+```bash
+# Start from the main branch
+git checkout main
+
+# Create and switch to your new solutions branch
+git checkout -b solutions/your-username
+```
+
 ### Keeping Your Repository Up-to-Date
 
 From time to time, the original template might receive updates to configuration files or tools. To pull these changes into your project, you need to configure an "upstream" remote.
@@ -85,17 +104,27 @@ git remote add upstream https://github.com/devmiczal/freecodecamp-challenges.git
 
 **Step 2: Fetch and Merge Updates**  
 
-Whenever you want to check for and apply updates, run these commands:
+When you want to update your repository with the latest changes from the template:
 
 ```bash
-# Fetch the latest changes from the original template
-git fetch upstream
+# 1. Make sure your own work is committed on your solutions branch
+git checkout solutions/your-username
+git add .
+git commit -m "feat: Save my latest solutions"
 
-# Merge the changes into your main branch
+# 2. Switch to your main branch
+git checkout main
+
+# 3. Fetch and merge the latest template changes
+git fetch upstream
 git merge upstream/main
+
+# 4. Update your solutions branch with the new template changes
+git checkout solutions/your-username
+git rebase main # This is the recommended way to apply your changes on top of the latest template
 ```
 
-Git will automatically merge the updates. If there are any conflicts, you will be prompted to resolve them manually.
+If you encounter any merge conflicts, resolve them, and then continue the rebase with `git rebase --continue`.
 
 ## File Structure 📁
 
@@ -180,7 +209,7 @@ Modern flat config setup (`eslint.config.mjs`) with:
 - Prettier integration
 - Custom rules for code quality
 
-VS Code recommendation: install the "ESLint" extension (dbaeumer.vscode-eslint) to get on-save linting and quick fixes in the editor.
+VS Code recommendation: install the `"ESLint"` extension (`dbaeumer.vscode-eslint`) to get on-save linting and quick fixes in the editor.
 
 ```bash
 # Run ESLint
@@ -200,7 +229,7 @@ Consistent code formatting with `.prettierrc.json`:
 - 110 character line width
 - Others
 
-Recommended VS Code extension: "Prettier - Code formatter" (esbenp.prettier-vscode) for consistent editor formatting and integration with the project's Prettier config.
+Recommended VS Code extension: `"Prettier - Code formatter"` (`esbenp.prettier-vscode`) for consistent editor formatting and integration with the project's Prettier config.
 
 ```bash
 # Format code
