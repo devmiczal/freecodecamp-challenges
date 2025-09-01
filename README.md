@@ -114,20 +114,26 @@ freecodecamp-challenges/
 ├── README.md
 ├── .ai/
 │   └── llm_instructions.md
+├── .git/
 ├── .github/
 │   └── copilot-instructions.md
 ├── .husky/
 │   ├── pre-commit
 │   └── _/
 ├── .vscode/
+│   ├── extensions.json
 │   └── settings.json
 ├── docs/
-│   └── history-commands.md
+│   ├── history-commands.md
+│   └── project-decisions.md
 └── src/
     └── 2025/
-        └── 08/
-            ├── 2025-08-31--hex-generator.js
-            └── 2025-08-31--hex-generator.test.js
+        ├── 08/
+        │   ├── 2025-08-31--hex-generator.js
+        │   └── 2025-08-31--hex-generator.test.js
+        └── 09/
+            ├── 2025-09-01--tribonacci-sequence.js
+            └── 2025-09-01--tribonacci-sequence.test.js
 ```
 
 **File Naming Convention:**
