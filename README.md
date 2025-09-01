@@ -11,6 +11,12 @@ The goal of this project is to consistently practice problem-solving, improve my
 - [freeCodeCamp - Daily Coding Challenges](#freecodecamp---daily-coding-challenges)
   - [Table of Contents](#table-of-contents)
   - [Project Overview](#project-overview)
+  - [Setting Up Your Own Repository](#setting-up-your-own-repository)
+    - [Step 1: Clone the Repository](#step-1-clone-the-repository)
+    - [Step 2: Remove the Original Git History](#step-2-remove-the-original-git-history)
+    - [Step 3: Initialize a New Git Repository](#step-3-initialize-a-new-git-repository)
+    - [Step 4: Add to Your GitHub](#step-4-add-to-your-github)
+    - [Additional Notes](#additional-notes)
   - [File Structure 📁](#file-structure-)
   - [Tech Stack \& Tooling](#tech-stack--tooling)
     - [Requirements](#requirements)
@@ -47,6 +53,55 @@ This repository serves as:
 - Automated code quality checks
 - Organized file structure for scalability
 - Professional development workflow
+
+## Setting Up Your Own Repository
+
+If you want to create your own copy of this repository to add your solutions to the daily challenges, follow these steps. This will allow you to manage your changes independently without affecting the original repository.
+
+### Step 1: Clone the Repository
+
+Download a copy of the repository to your computer:
+
+```bash
+git clone https://github.com/freeCodeCamp/freeCodeCamp.git freecodecamp-challenges
+cd freecodecamp-challenges
+```
+
+### Step 2: Remove the Original Git History
+
+To start with a clean history, remove the `.git` folder:
+
+```bash
+rm -rf .git
+```
+
+### Step 3: Initialize a New Git Repository
+
+Create a new local repository:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit: Fork of freeCodeCamp Daily Coding Challenges"
+```
+
+### Step 4: Add to Your GitHub
+
+1. Go to [GitHub.com](https://github.com) and create a new repository (e.g., "my-freecodecamp-challenges").
+2. Copy the URL of your new repository (e.g., `https://github.com/your-username/my-freecodecamp-challenges.git`).
+3. Add the remote repository and push the changes:
+
+```bash
+git remote add origin https://github.com/your-username/my-freecodecamp-challenges.git
+git branch -M main
+git push -u origin main
+```
+
+### Additional Notes
+
+- Make sure you have Git installed and a GitHub account.
+- After completing these steps, you can add your solutions, run tests, and commit changes just like in the original repository.
+- If you encounter issues, check the GitHub documentation or seek help from the community.
 
 ## File Structure 📁
 
