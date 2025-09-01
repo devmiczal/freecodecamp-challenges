@@ -4,8 +4,12 @@ This file gives focused, actionable guidance for AI coding agents working in the
 
 Principles
 - Keep changes minimal and follow the project's naming conventions: source files live in `src/YYYY/MM/` and are named `YYYY-MM-DD--challenge-name.js`. Tests co-locate as `*.test.js` beside the source.
-- Use modern ES2024+ JavaScript (arrow functions, const/let, export syntax) and include a short JSDoc header for each challenge file.
-- Preserve README and `.ai/llm_instructions.md` guidance when suggesting project-wide changes.
+- Prefer modern JavaScript features and proven best practices:
+  - Use ES2020+ idioms (arrow functions, const/let, optional chaining, nullish coalescing) where they improve clarity.
+  - Prefer small, pure functions, immutability, descriptive names, and explicit error handling.
+  - Favor readability and maintainability over clever one-liners; write simple tests.
+  - Avoid global state, keep side-effects explicit, and document complexity (time/space) for non-trivial algorithms.
+- All code, documentation and inline comments MUST be written in English to keep the repository consistent and accessible internationally.
 
 What this repo contains (big picture)
 - A collection of standalone daily JS challenge solutions organized by date under `src/`.
@@ -40,7 +44,8 @@ Integration points & external dependencies
 - Jest is used for testing (configured in `package.json`). Avoid adding new heavy dependencies without maintainer approval.
 
 When editing or creating code
-- Use the project's ESLint + Prettier style (see `eslint.config.mjs` and `.prettierrc` in repo root).
+- Use modern ES2024+ JavaScript (arrow functions, const/let, export syntax) and include a short JSDoc header for each challenge file.
+- Ensure all source code, README entries, JSDoc headers and inline comments are written in English.
 - Add JSDoc header including date, difficulty (if known), and complexity comments for non-trivial solutions.
 - Add minimal unit tests: happy path + 1-2 edge cases.
 
@@ -83,7 +88,7 @@ Additional, requested items
 
     // Minimal, named export
     const solutionFunction = (input) => {
-      // ...implementation
+      // ...implementation (keep comments and doc in English)
     };
 
     // Quick local runner (optional) -------------------------------------------------
@@ -143,7 +148,3 @@ Additional, requested items
 Notes
 - Keep PRs small: one challenge per PR remains the convention.
 - When adding Node-24 features or changing tooling, call out the change explicitly in PR description and wait for maintainer approval.
-
----
-
-If you want, I can also add these templates as actual example files in `src/2025/09/` (one source + one test) so contributors can copy them. Reply which option you prefer.
