@@ -12,11 +12,7 @@ The goal of this project is to consistently practice problem-solving, improve my
   - [Table of Contents](#table-of-contents)
   - [Project Overview](#project-overview)
   - [Setting Up Your Own Repository](#setting-up-your-own-repository)
-    - [Step 1: Clone the Repository](#step-1-clone-the-repository)
-    - [Step 2: Remove the Original Git History](#step-2-remove-the-original-git-history)
-    - [Step 3: Initialize a New Git Repository](#step-3-initialize-a-new-git-repository)
-    - [Step 4: Add to Your GitHub](#step-4-add-to-your-github)
-    - [Additional Notes](#additional-notes)
+    - [Keeping Your Repository Up-to-Date](#keeping-your-repository-up-to-date)
   - [File Structure 📁](#file-structure-)
   - [Tech Stack \& Tooling](#tech-stack--tooling)
     - [Requirements](#requirements)
@@ -42,9 +38,11 @@ The goal of this project is to consistently practice problem-solving, improve my
 This repository serves as:
 
 - **Learning Platform**: Daily practice with algorithmic problems
-- **Progress Tracker**: Organized solutions showing skill development over time
+- **Progress Tracker**: Organized solutions for my purposes
 - **Code Quality Showcase**: Modern JavaScript with professional tooling setup
-- **Reference Material**: Documented solutions for future review
+- **LLM testing sandbox**: The repository is also used to explore and test how large language models (LLMs) can assist with problem solving, code generation, and documentation workflows in real projects.
+- **Beginner-friendly template**: This project doubles as a template for beginner JavaScript developers — it demonstrates file structure, testing, and professional tooling so newcomers can learn a practical workflow.
+- **Real-work workspace**: Challenges are generally simple, but the repository provides a full professional workspace (linting, formatting, hooks, tests) so you can solve exercises in an environment that mirrors real JS development.
 
 **Key Features:**
 
@@ -56,57 +54,48 @@ This repository serves as:
 
 ## Setting Up Your Own Repository
 
-If you want to create your own copy of this repository to add your solutions to the daily challenges, follow these steps. This will allow you to manage your changes independently without affecting the original repository.
+To create your own copy of this project for your solutions, we recommend using it as a template.
 
-### Step 1: Clone the Repository
+**Step 1: Create a New Repository from this Template**  
 
-Download a copy of the repository to your computer:
+1. Click the **"Use this template"** button at the top of the repository page.
+2. Give your new repository a name and click "Create repository from template".
+3. This will create a new repository in your GitHub account with a clean history.
 
-```bash
-# You can change the name of the repository folder (`freecodecamp-challenges`).
-git clone git@github.com:devmiczal/freecodecamp-challenges.git freecodecamp-challenges
-# Or
-git clone https://github.com/devmiczal/freecodecamp-challenges.git freecodecamp-challenges
-
-cd freecodecamp-challenges
-```
-
-### Step 2: Remove the Original Git History
-
-To start with a clean history, remove the `.git` folder:
+**Step 2: Clone Your New Repository**  
 
 ```bash
-rm -rf .git
+git clone https://github.com/your-username/your-new-repository-name.git
+cd your-new-repository-name
 ```
 
-### Step 3: Initialize a New Git Repository
+Now you can start adding your own solutions!
 
-Create a new local repository:
+### Keeping Your Repository Up-to-Date
+
+From time to time, the original template might receive updates to configuration files or tools. To pull these changes into your project, you need to configure an "upstream" remote.
+
+**Step 1: Add the Upstream Remote (Only Once)**  
+
+In your terminal, inside your project folder, run this command:
 
 ```bash
-git init
-git add .
-git commit -m "Initial commit: Fork of freeCodeCamp Daily Coding Challenges"
+git remote add upstream https://github.com/devmiczal/freecodecamp-challenges.git
 ```
 
-### Step 4: Add to Your GitHub
+**Step 2: Fetch and Merge Updates**  
 
-1. Go to [GitHub.com](https://github.com) and create a new repository (e.g., "my-freecodecamp-challenges").
-2. Copy the URL of your new repository (e.g., `https://github.com/your-username/my-freecodecamp-challenges.git`).
-3. Add the remote repository and push the changes:
+Whenever you want to check for and apply updates, run these commands:
 
 ```bash
-git remote add origin https://github.com/your-username/my-freecodecamp-challenges.git
-# main or master
-git branch -M main
-git push -u origin main
+# Fetch the latest changes from the original template
+git fetch upstream
+
+# Merge the changes into your main branch
+git merge upstream/main
 ```
 
-### Additional Notes
-
-- Make sure you have Git installed and a GitHub account.
-- After completing these steps, you can add your solutions, run tests, and commit changes just like in the original repository.
-- If you encounter issues, check the GitHub documentation or seek help from the community.
+Git will automatically merge the updates. If there are any conflicts, you will be prompted to resolve them manually.
 
 ## File Structure 📁
 
@@ -185,6 +174,8 @@ Modern flat config setup (`eslint.config.mjs`) with:
 - Prettier integration
 - Custom rules for code quality
 
+VS Code recommendation: install the "ESLint" extension (dbaeumer.vscode-eslint) to get on-save linting and quick fixes in the editor.
+
 ```bash
 # Run ESLint
 npx eslint .
@@ -202,6 +193,8 @@ Consistent code formatting with `.prettierrc.json`:
 - Semicolons
 - 110 character line width
 - Others
+
+Recommended VS Code extension: "Prettier - Code formatter" (esbenp.prettier-vscode) for consistent editor formatting and integration with the project's Prettier config.
 
 ```bash
 # Format code
