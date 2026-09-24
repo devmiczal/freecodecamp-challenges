@@ -1,15 +1,15 @@
 # Project decisions
 
-## Table of Contents
+---
 
-- [Project decisions](#project-decisions)
-  - [Table of Contents](#table-of-contents)
-  - [Important Project Notes](#important-project-notes)
-    - [Future Considerations](#future-considerations)
-  - [Template Repository](#template-repository)
-    - [Step-by-Step Instructions](#step-by-step-instructions)
-    - [Using the Template](#using-the-template)
-    - [Benefits of Template Repositories](#benefits-of-template-repositories)
+**Spis treści:**
+
+- [Important Project Notes](#important-project-notes)
+  - [Future Considerations](#future-considerations)
+- [Template Repository](#template-repository)
+  - [Step-by-Step Instructions](#step-by-step-instructions)
+  - [Using the Template](#using-the-template)
+  - [Benefits of Template Repositories](#benefits-of-template-repositories)
 
 ## Important Project Notes
 

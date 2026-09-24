@@ -6,33 +6,33 @@ This repository contains my personal solutions to the Daily Coding Challenges fr
 
 The goal of this project is to consistently practice problem-solving, improve my JavaScript skills, project setup, and testing LLMs (commands, docJS, test jest, etc.).
 
-## Table of Contents
+---
 
-- [freeCodeCamp - Daily Coding Challenges](#freecodecamp---daily-coding-challenges)
-  - [Table of Contents](#table-of-contents)
-  - [Project Overview](#project-overview)
-  - [Setting Up Your Own Repository](#setting-up-your-own-repository)
-    - [Branching Strategy](#branching-strategy)
-    - [Keeping Your Repository Up-to-Date](#keeping-your-repository-up-to-date)
-  - [File Structure 📁](#file-structure-)
-  - [Tech Stack \& Tooling](#tech-stack--tooling)
-    - [Requirements](#requirements)
-    - [ESLint Configuration](#eslint-configuration)
-    - [Prettier Configuration](#prettier-configuration)
-    - [Husky Configuration](#husky-configuration)
-      - [Husky - problems](#husky---problems)
-  - [Development Workflow](#development-workflow)
-  - [Running Challenges](#running-challenges)
-  - [Testing](#testing)
-  - [Code Quality](#code-quality)
-  - [Project Guidelines](#project-guidelines)
-    - [Code Style](#code-style)
-    - [Solution Structure](#solution-structure)
-    - [Algorithm Categories Covered](#algorithm-categories-covered)
-  - [AI Assistant Instructions](#ai-assistant-instructions)
-  - [Contributing](#contributing)
-  - [Disclaimer](#disclaimer)
-  - [License](#license)
+**Spis treści:**
+
+- [Project Overview](#project-overview)
+- [Setting Up Your Own Repository](#setting-up-your-own-repository)
+  - [Branching Strategy](#branching-strategy)
+  - [Keeping Your Repository Up-to-Date](#keeping-your-repository-up-to-date)
+- [File Structure 📁](#file-structure-)
+- [Tech Stack \& Tooling](#tech-stack--tooling)
+  - [Requirements](#requirements)
+  - [ESLint Configuration](#eslint-configuration)
+  - [Prettier Configuration](#prettier-configuration)
+  - [Husky Configuration](#husky-configuration)
+    - [Husky - problems](#husky---problems)
+- [Development Workflow](#development-workflow)
+- [Running Challenges](#running-challenges)
+- [Testing](#testing)
+- [Code Quality](#code-quality)
+- [Project Guidelines](#project-guidelines)
+  - [Code Style](#code-style)
+  - [Solution Structure](#solution-structure)
+  - [Algorithm Categories Covered](#algorithm-categories-covered)
+- [AI Assistant Instructions](#ai-assistant-instructions)
+- [Contributing](#contributing)
+- [Disclaimer](#disclaimer)
+- [License](#license)
 
 ## Project Overview
 

@@ -1,10 +1,10 @@
 # History commands
 
-## Table of Contents
+---
 
-- [History commands](#history-commands)
-  - [Table of Contents](#table-of-contents)
-  - [Installations](#installations)
+**Spis treści:**
+
+- [Installations](#installations)
 
 ## Installations
 
